@@ -1,8 +1,9 @@
 /*
- * grunt-git-describe
- * https://github.com/mikaelkaron/grunt-git-describe
+ * grunt-git-status
+ * https://github.com/nyfagel/grunt-git-status
+ * Forked from https://github.com/mikaelkaron/grunt-git-describe
  *
- * Copyright (c) 2013 Mikael Karon
+ * Copyright (c) 2013 Ny fågel
  * Licensed under the MIT license.
  */
 
@@ -20,7 +21,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		"git-describe": {
+		"git-status": {
 			"me" : {
 			}
 		}
@@ -29,6 +30,6 @@ module.exports = function (grunt) {
 
 	grunt.loadTasks("tasks");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.registerTask("default", [ "jshint", "git-describe" ]);
+	grunt.registerTask("default", [ "jshint", "git-status" ]);
 
 };

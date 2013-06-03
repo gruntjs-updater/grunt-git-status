@@ -1,8 +1,8 @@
 /*
- * grunt-git-describe
- * https://github.com/mikaelkaron/grunt-git-describe
+ * grunt-git-status
+ * https://github.com/nyfagel/grunt-git-status
  *
- * Copyright (c) 2013 Mikael Karon
+ * Copyright (c) 2013 Ny fågel
  * Licensed under the MIT license.
  */
 
@@ -12,16 +12,14 @@ module.exports = function (grunt) {
 	var CWD = "cwd";
 	var PROP = "prop";
 	var FAIL_ON_ERROR = "failOnError";
-	var DIRTY_MARK = "dirtyMark";
 
-	grunt.registerMultiTask("git-describe", "Describes current git commit", function (prop, cwd) {
+	grunt.registerMultiTask("git-status", "Runs git status", function (prop, cwd) {
 		// Start async task
 		var done = this.async();
 
 		// Define default options
 		var options = {};
 		options[CWD] = ".";
-		options[DIRTY_MARK] = "-dirty";
 		options[FAIL_ON_ERROR] = true;
 
 		// Load cli options (with defaults)
@@ -30,7 +28,6 @@ module.exports = function (grunt) {
 		// Override options
 		options[PROP] = prop || options[PROP];
 		options[CWD] = cwd || options[CWD];
-		options[DIRTY_MARK] = grunt.option(DIRTY_MARK) || options[DIRTY_MARK];
 
 		// Log flags (if verbose)
 		grunt.log.verbose.writeflags(options);
@@ -38,7 +35,7 @@ module.exports = function (grunt) {
 		// Spawn git
 		grunt.util.spawn({
 			"cmd" : "git",
-			"args" : [ "describe", "--tags", "--always", "--long", "--dirty=" + options[DIRTY_MARK] ],
+			"args" : [ "status" ],
 			"opts" : {
 				"cwd" : options[CWD]
 			}
