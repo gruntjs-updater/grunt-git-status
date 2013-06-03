@@ -1,5 +1,7 @@
 # grunt-git-status
 
+[![Build Status](https://travis-ci.org/nyfagel/grunt-git-status.png?branch=master)](https://travis-ci.org/nyfagel/grunt-git-status)
+
 > Runs git status
 
 Forked off [mikaelkaron/grunt-git-describe](https://github.com/mikaelkaron/grunt-git-describe).
