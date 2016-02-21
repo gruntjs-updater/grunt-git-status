@@ -10,7 +10,7 @@
 	"contributors": [
 		{
 			"name": "Mikael Karon",
-			    "email": "mikael@karon.se"
+			"email": "mikael@karon.se"
 		}
 	],
 	"repository": {
@@ -35,7 +35,10 @@
 		"grunt-cli": "~0.1.9"
 	},
 	"peerDependencies": {
-		"grunt": "~0.4.0"
+		"grunt": ">=0.4.0"
 	},
-	"keywords": ["gruntplugin", "git"]
+	"keywords": [
+		"gruntplugin",
+		"git"
+	]
 }
